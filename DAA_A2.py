@@ -1,3 +1,4 @@
+#moving all zeroes to the end of the array
 def mz(arr):
     # Base case: If the array has 1 or 0 elements, return it as is
     if len(arr) <= 1:
