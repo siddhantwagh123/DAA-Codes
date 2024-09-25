@@ -11,17 +11,17 @@ def max_shops_visited(S, E, K):
     #Step 1:Pair and sort the shops based on end time and start time
     shops = sorted(zip(S, E), key=lambda x: (x[1], x[0]))
     
-    #Step 2:Initialize a list to track the end time of the last shop visited by each person
+    #Step 2:Initialize a list to track the end time of last shop visited by each person
     persons = [0] * K  #List of size K initialized to 0
     
     #Step 3:Greedily assign shops to persons
     count = 0
     for shop in shops:
         for i in range(K):
-            if persons[i] <= shop[0]:  #Person i can visit this shop
+            if persons[i] <= shop[0]: #Person i can visit this shop
                 persons[i] = shop[1]  #Update the end time for person i
                 count += 1
-                break  #Move to the next shop after assigning to a person
+                break                 #Move to the next shop after assigning to a person
                 
     return count
 
